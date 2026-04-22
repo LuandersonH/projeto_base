@@ -18,7 +18,7 @@ export function Problem() {
     >
       <div className="flex flex-col min-h-dvh justify-center items-center">
         <h1 className="text-3xl md:text-5xl font-serif font-semibold mx-auto text-center text-white pt-5 pb-12">
-          SABEMOS O QUÃO CANSATIVO UM INVENTÁRIO PODE SE TORNAR
+          SABEMOS O QUÃO CANSATIVO UM INVENTÁRIO PODE SER
         </h1>
 
         <div className="flex flex-col gap-6 md:gap-8 text-white max-w-xl w-full mx-auto">
