@@ -1,7 +1,10 @@
+import Landing from "./extrajudicial-probate";
+import { GlobalContainer } from "./globalContainer";
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <h1 className="text-3xl font-bold text-blue-600">HOME</h1>
-    </div>
+    <GlobalContainer className="flex flex-col items-center justify-center">
+      <Landing />
+    </GlobalContainer>
   );
 }
