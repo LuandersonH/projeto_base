@@ -1,3 +1,5 @@
+import type { Variants } from "framer-motion";
+
 import {
   MessageCircleIcon,
   ClockIcon,
@@ -6,15 +8,20 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const cardVariants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: (i: number) => ({
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 40,
+  },
+
+  visible: (i: number = 0) => ({
     opacity: 1,
     x: 0,
+
     transition: {
       delay: i * 0.15,
       duration: 0.5,
-      ease: "easeOut",
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   }),
 };

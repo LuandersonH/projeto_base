@@ -1,5 +1,5 @@
 import Landing from "./extrajudicial-probate";
-import { GlobalContainer } from "./globalContainer";
+import { GlobalContainer } from "./GlobalContainer";
 
 export default function Home() {
   return (
