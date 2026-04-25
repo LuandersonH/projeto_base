@@ -4,7 +4,7 @@ import imgHero from "@/assets/hero/hero.png";
 export function Hero() {
   return (
     <section
-      className="w-full min-h-dvh flex items-center bg-amber-50 bg-cover bg-center"
+      className="w-full min-h-[100svh] flex items-center bg-amber-50 bg-cover bg-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${imgHero})`,
       }}

@@ -1,25 +1,39 @@
 import {
-  TriangleAlertIcon,
   TrendingUpIcon,
   UsersIcon,
   FileWarningIcon,
+  MessageCircleIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import imgBg from "@/assets/hero/problem.webp";
+
+const cardVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export function Urgency() {
   return (
     <section
-      className="w-full min-h-dvh bg-cover bg-center bg-no-repeat relative"
+      className="w-full min-h-[100svh] bg-cover bg-center bg-no-repeat relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url(${imgBg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.6)), url(${imgBg})`,
       }}
     >
-      <div className="w-full min-h-dvh flex items-center justify-center px-4 py-16">
+      <div className="w-full min-h-[100svh] flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT SIDE - COPY */}
           <div className="text-white space-y-6">
-            <p className="uppercase tracking-widest text-sm text-gray-400">
-              Urgência
+            <p className="uppercase tracking-widest text-sm text-gray-300">
+              TOME A INICIATIVA
             </p>
 
             <h1 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
@@ -35,7 +49,14 @@ export function Urgency() {
                 Ele joga contra você.
               </span>
             </p>
-
+            <a
+              href="https://wa.me/SEUNUMERO"
+              target="_blank"
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base md:text-lg px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            >
+              <MessageCircleIcon className="size-5 md:size-6" />
+              Falar com especialista agora
+            </a>
             <div className="border-l-4 border-red-500 pl-4">
               <p className="text-base md:text-lg text-gray-200">
                 O que hoje é simples, amanhã pode virar um problema maior.
@@ -43,33 +64,42 @@ export function Urgency() {
             </div>
           </div>
 
-          {/* RIGHT SIDE - CARDS */}
+          {/* RIGHT SIDE - CARDS COM ANIMAÇÃO */}
           <div className="grid gap-4">
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <TrendingUpIcon className="text-red-600 mt-1" />
-              <p className="text-base md:text-lg text-gray-800">
-                Impostos e multas continuam crescendo
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <UsersIcon className="text-red-600 mt-1" />
-              <p className="text-base md:text-lg text-gray-800">
-                Pequenos desentendimentos viram grandes conflitos
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <FileWarningIcon className="text-red-600 mt-1" />
-              <p className="text-base md:text-lg text-gray-800">
-                A documentação se complica com o tempo
-              </p>
-            </div>
+            {[
+              {
+                icon: <TrendingUpIcon className="text-red-600 mt-1" />,
+                text: "Impostos e multas continuam crescendo",
+              },
+              {
+                icon: <UsersIcon className="text-red-600 mt-1" />,
+                text: "Pequenos desentendimentos viram grandes conflitos",
+              },
+              {
+                icon: <FileWarningIcon className="text-red-600 mt-1" />,
+                text: "A documentação se complica com o tempo",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                {item.icon}
+                <p className="text-base md:text-lg text-gray-800">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* BOTTOM STRIP (IMPACTO FINAL) */}
+      {/* BOTTOM STRIP */}
       <div className="w-full bg-red-600 text-white py-6 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-2">
           <p className="text-base md:text-lg">

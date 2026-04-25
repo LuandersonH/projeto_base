@@ -4,11 +4,25 @@ import {
   DollarSignIcon,
   HelpCircleIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export function Contact() {
   return (
-    <section className="w-full min-h-dvh bg-[#0a0a0a] relative">
-      <div className="w-full min-h-dvh flex items-center justify-center px-4 py-16">
+    <section className="w-full min-h-[100svh] bg-[#0a0a0a] relative">
+      <div className="w-full min-h-[100svh] flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT SIDE */}
           <div className="text-white space-y-6">
@@ -29,15 +43,14 @@ export function Contact() {
 
             <div className="border-l-4 border-yellow-500 pl-4">
               <p className="text-base md:text-lg text-gray-200">
-                A primeira conversa é gratuita e sem compromisso.
+                Conversa gratuitamente e sem compromisso.
               </p>
             </div>
 
-            {/* CTA */}
             <a
               href="https://wa.me/SEUNUMERO"
               target="_blank"
-              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base md:text-lg px-6 py-4 rounded-xl shadow-lg transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base md:text-lg px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
             >
               <MessageCircleIcon className="size-5 md:size-6" />
               Falar com especialista agora
@@ -48,44 +61,43 @@ export function Contact() {
             </p>
           </div>
 
-          {/* RIGHT SIDE - CARDS */}
+          {/* RIGHT SIDE - FAQ COM ANIMAÇÃO */}
           <div className="grid gap-4">
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <ClockIcon className="text-yellow-600 mt-1" />
-              <div>
-                <p className="text-base md:text-lg text-gray-800 font-medium">
-                  Qual o prazo médio?
-                </p>
-                <p className="text-sm text-gray-600 mt-1">
-                  Em muitos casos, o processo pode ser resolvido em semanas.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <DollarSignIcon className="text-yellow-600 mt-1" />
-              <div>
-                <p className="text-base md:text-lg text-gray-800 font-medium">
-                  Quanto custa?
-                </p>
-                <p className="text-sm text-gray-600 mt-1">
-                  Você recebe uma estimativa clara após uma análise rápida do
-                  caso.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4">
-              <HelpCircleIcon className="text-yellow-600 mt-1" />
-              <div>
-                <p className="text-base md:text-lg text-gray-800 font-medium">
-                  Como funciona?
-                </p>
-                <p className="text-sm text-gray-600 mt-1">
-                  Orientamos todo o processo e cuidamos da parte burocrática.
-                </p>
-              </div>
-            </div>
+            {[
+              {
+                icon: <ClockIcon className="text-yellow-600 mt-1" />,
+                title: "Qual o prazo médio?",
+                desc: "Em muitos casos, o processo pode ser resolvido em semanas.",
+              },
+              {
+                icon: <DollarSignIcon className="text-yellow-600 mt-1" />,
+                title: "Quanto custa?",
+                desc: "Você recebe uma estimativa clara após uma análise rápida do caso.",
+              },
+              {
+                icon: <HelpCircleIcon className="text-yellow-600 mt-1" />,
+                title: "Como funciona?",
+                desc: "Orientamos todo o processo e cuidamos da parte burocrática.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4 hover:shadow-xl hover:-translate-y-1"
+              >
+                {item.icon}
+                <div>
+                  <p className="text-base md:text-lg text-gray-800 font-medium">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

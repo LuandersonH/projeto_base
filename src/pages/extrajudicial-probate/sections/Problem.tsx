@@ -11,12 +11,12 @@ import imgBg from "@/assets/hero/problem.webp";
 export function Problem() {
   return (
     <section
-      className="w-full min-h-dvh bg-cover bg-center bg-no-repeat p-4"
+      className="w-full min-h-[100svh] bg-cover bg-center bg-no-repeat p-4"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.6)), url(${imgBg})`,
       }}
     >
-      <div className="flex flex-col min-h-dvh justify-center items-center">
+      <div className="flex flex-col min-h-[100svh] justify-center items-center">
         <h1 className="text-3xl md:text-5xl font-serif font-semibold mx-auto text-center text-white pt-5 pb-12">
           SABEMOS O QUÃO CANSATIVO UM INVENTÁRIO PODE SER
         </h1>
@@ -75,13 +75,6 @@ export function Problem() {
               </p>
             </ItemDescription>
           </Item>
-
-          {/* <Button
-            size="xs"
-            className="md:w-auto whitespace-normal min-h-fit text-center bg-yellow-500 text-black hover:bg-yellow-400 text-sm md:text-base font-bold rounded-lg shadow-lg transition-all px-4 py-2"
-          >
-            RESOLVER DE UMA VEZ POR TODAS
-          </Button> */}
 
           <a
             href="https://wa.me/SEUNUMERO"

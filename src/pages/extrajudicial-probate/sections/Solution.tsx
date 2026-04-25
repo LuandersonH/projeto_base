@@ -9,13 +9,17 @@ import {
 import imgBg from "@/assets/hero/lampada.png";
 export function Solution() {
   return (
-    <section
-      className="w-full min-h-dvh bg-cover bg-center bg-no-repeat p-4"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.6)), url(${imgBg})`,
-      }}
-    >
-      <div className="flex flex-col min-h-dvh justify-center items-center">
+    <section className="w-full min-h-[100svh] relative p-4 overflow-hidden">
+      {/* background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${imgBg})` }}
+      />
+
+      {/* overlay forte */}
+      <div className="absolute inset-0 bg-black/15" />
+
+      <div className="relative z-10 flex flex-col min-h-[100svh] justify-center items-center">
         <h2 className="text-3xl md:text-5xl font-serif font-semibold text-center text-white pt-5 pb-12">
           O INVENTÁRIO EXTRAJUDICIAL RESOLVE O SEU PROBLEMA!
         </h2>
