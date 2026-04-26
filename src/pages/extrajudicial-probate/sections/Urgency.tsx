@@ -5,9 +5,12 @@ import {
   UsersIcon,
   FileWarningIcon,
   MessageCircleIcon,
+  TimerIcon,
+  ClockIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import imgBg from "@/assets/hero/problem.webp";
+import { Button } from "@/components/ui/button";
 
 const cardVariants: Variants = {
   hidden: {
@@ -44,9 +47,8 @@ export function Urgency() {
             </p>
 
             <h1 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
-              Adiar só torna tudo
-              <br />
-              mais caro — e mais difícil
+              <ClockIcon className="size-10 md:size-15 animate-spin" />
+              Adiar só torna tudo mais caro — e mais difícil.
             </h1>
 
             <p className="text-base md:text-lg text-gray-300">
@@ -56,14 +58,12 @@ export function Urgency() {
                 Ele joga contra você.
               </span>
             </p>
-            <a
-              href="https://wa.me/SEUNUMERO"
-              target="_blank"
-              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base md:text-lg px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
-            >
-              <MessageCircleIcon className="size-5 md:size-6" />
-              Falar com especialista agora
-            </a>
+            <Button className="min-h-20 w-full text-base font-bold rounded-xl text-white bg-red-950 shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.02]">
+              <span className="text-white-600">
+                RESOLVA SEU PROBLEMA JUNTO COM O ADVOGADO AGORA!
+              </span>
+            </Button>
+
             <div className="border-l-4 border-red-500 pl-4">
               <p className="text-base md:text-lg text-gray-200">
                 O que hoje é simples, amanhã pode virar um problema maior.
