@@ -11,6 +11,7 @@ import {
 import { motion } from "framer-motion";
 import imgBg from "@/assets/hero/problem.webp";
 import { Button } from "@/components/ui/button";
+import { redirectToWhatsapp } from "@/constants/contact";
 
 const cardVariants: Variants = {
   hidden: {
@@ -58,9 +59,13 @@ export function Urgency() {
                 Ele joga contra você.
               </span>
             </p>
-            <Button className="min-h-20 w-full text-base font-bold rounded-xl text-white bg-red-950 shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.02]">
-              <span className="text-white-600">
-                RESOLVA SEU PROBLEMA JUNTO COM O ADVOGADO AGORA!
+            <Button
+              onClick={redirectToWhatsapp}
+              className="min-h-20 w-full text-base font-bold rounded-xl text-white bg-red-800 shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.02]"
+            >
+              <span className="text-white-600 flex gap-x-2">
+                <MessageCircleIcon className="size-5 md:size-6" />
+                QUERO RESOLVER AGORA MESMO!
               </span>
             </Button>
 
@@ -107,7 +112,7 @@ export function Urgency() {
       </div>
 
       {/* BOTTOM STRIP */}
-      <div className="w-full bg-red-600 text-white py-6 px-4 text-center">
+      <div className="w-full bg-red-800 text-white py-6 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-2">
           <p className="text-base md:text-lg">
             E enquanto você espera, o patrimônio segue bloqueado — sem cumprir o

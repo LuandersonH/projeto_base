@@ -7,6 +7,8 @@ import {
   HelpCircleIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { redirectToWhatsapp } from "@/constants/contact";
 
 const cardVariants: Variants = {
   hidden: {
@@ -54,14 +56,15 @@ export function Contact() {
               </p>
             </div>
 
-            <a
-              href="https://wa.me/SEUNUMERO"
-              target="_blank"
-              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base md:text-lg px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            <Button
+              onClick={redirectToWhatsapp}
+              className="min-h-16 w-full text-base font-bold rounded-xl gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.02]"
             >
-              <MessageCircleIcon className="size-5 md:size-6" />
-              Falar com especialista agora
-            </a>
+              <span className="text-white-600 flex gap-x-2">
+                <MessageCircleIcon className="size-5 md:size-6" />
+                Falar com especialista agora
+              </span>
+            </Button>
 
             <p className="text-sm text-gray-400">
               Atendimento rápido • 100% confidencial

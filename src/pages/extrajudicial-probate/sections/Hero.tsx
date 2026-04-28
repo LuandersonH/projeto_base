@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-
+import { redirectToWhatsapp } from "@/constants/contact";
+import heroWpp from "@/assets/hero/logo_horizontal.png";
 export function Hero() {
   return (
     <section
@@ -29,7 +30,7 @@ export function Hero() {
           </div>
 
           <div className="space-y-5">
-            <h1 className="text-4xl md:text-6xl xl:text-8xl leading-tight font-serif font-semibold text-white">
+            <h1 className="text-4xl md:text-5xl leading-tight font-serif font-semibold text-white">
               INVENTÁRIO RÁPIDO
               <br />
               <span className="text-yellow-500">SEM DOR DE CABEÇA</span>
@@ -49,16 +50,15 @@ export function Hero() {
             Conversar com um especialista agora
           </Button> */}
 
-          <Button className="min-h-20 w-full text-base font-bold rounded-xl text-white bg-green-800 hover:bg-green-500 shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.03]">
+          <Button
+            onClick={redirectToWhatsapp}
+            className="min-h-15 w-full text-xl font-bold rounded-xl text-white  shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.03] border-yellow-500 bg-green-600/35"
+          >
             Conversar com especialista agora
           </Button>
-
+          {/* bg-green-800 hover:bg-green-500 */}
           <div className="grid sm:grid-cols-3 gap-3 pt-2">
-            {[
-              "Atendimento humanizado",
-              "Processo simplificado",
-              "Sem surpresas",
-            ].map((item) => (
+            {["Rápido", "Simples", "Eficiente"].map((item) => (
               <div
                 key={item}
                 className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-200 text-center backdrop-blur-sm"
@@ -100,8 +100,11 @@ export function Hero() {
               ))}
             </div>
 
-            <Button className="w-full mt-8 min-h-12 rounded-xl bg-yellow-500 text-black hover:bg-yellow-400 font-semibold">
-              Começar agora
+            <Button
+              onClick={redirectToWhatsapp}
+              className="w-full mt-8 min-h-16 rounded-xl bg-yellow-600 text-white hover:bg-yellow-500 font-bold text-xl"
+            >
+              Quero começar
             </Button>
           </div>
         </div>
