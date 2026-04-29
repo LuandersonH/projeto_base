@@ -6,7 +6,7 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[100svh] flex items-center justify-center bg-background px-4">
+    <div className="min-h-svh flex items-center justify-center bg-background px-4">
       <div className="text-center space-y-6 max-w-md">
         <h1 className="text-6xl font-bold tracking-tight">404</h1>
 

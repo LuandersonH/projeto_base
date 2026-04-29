@@ -30,8 +30,8 @@ const cardVariants: Variants = {
 
 export function Contact() {
   return (
-    <section className="w-full min-h-[100svh] bg-[#0a0a0a] relative">
-      <div className="w-full min-h-[100svh] flex items-center justify-center px-4 py-16">
+    <section className="w-full min-h-svh bg-[#0a0a0a] relative">
+      <div className="w-full min-h-svh flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT SIDE */}
           <div className="text-white space-y-6">

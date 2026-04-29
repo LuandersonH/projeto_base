@@ -4,7 +4,7 @@ import imgBg from "@/assets/hero/fundo_authority.png";
 export function Authority() {
   return (
     <section
-      className="w-full min-h-[100svh] flex flex-col items-center px-4 py-12 bg-gray-50  bg-cover bg-left bg-no-repeat"
+      className="w-full min-h-svh flex flex-col items-center px-4 py-12 bg-gray-50  bg-cover bg-left bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(rgba(242, 242, 199, 0.9), rgba(0, 0, 0, 0.65)), url(${imgBg})`,
       }}

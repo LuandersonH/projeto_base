@@ -34,12 +34,12 @@ const cardVariants: Variants = {
 export function Urgency() {
   return (
     <section
-      className="w-full min-h-[100svh] bg-cover bg-center bg-no-repeat relative"
+      className="w-full min-h-svh bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.6)), url(${imgBg})`,
       }}
     >
-      <div className="w-full min-h-[100svh] flex items-center justify-center px-4 py-16">
+      <div className="w-full min-h-svh flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT SIDE - COPY */}
           <div className="text-white space-y-6">

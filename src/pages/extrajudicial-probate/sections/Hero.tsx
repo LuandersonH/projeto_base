@@ -4,7 +4,7 @@ import heroWpp from "@/assets/hero/logo_horizontal.png";
 export function Hero() {
   return (
     <section
-      className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-cover bg-center"
+      className="relative w-full min-h-svh flex items-center overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: `
           linear-gradient(
