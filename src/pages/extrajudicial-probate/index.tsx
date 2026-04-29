@@ -4,6 +4,7 @@ import { Solution } from "@/pages/extrajudicial-probate/sections/Solution";
 import { Authority } from "@/pages/extrajudicial-probate/sections/Authority";
 import { Urgency } from "@/pages/extrajudicial-probate/sections/Urgency";
 import { Contact } from "@/pages/extrajudicial-probate/sections/Contact";
+import { StickyMobileCTA } from "@/pages/extrajudicial-probate/sections/StickyMobileCTA";
 
 export default function Landing() {
   return (
@@ -14,6 +15,7 @@ export default function Landing() {
       <Authority />
       <Urgency />
       <Contact />
+      <StickyMobileCTA />
     </>
   );
 }

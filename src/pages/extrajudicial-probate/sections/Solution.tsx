@@ -11,108 +11,96 @@ import imgBg from "@/assets/hero/lampada.png";
 import imgLogo from "@/assets/hero/logo.png";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { Button } from "@/components/ui/button";
+
+const solutionPoints = [
+  {
+    icon: FileTextIcon,
+    text: "Checklist documental desde o início, para evitar idas e vindas.",
+  },
+  {
+    icon: ClockIcon,
+    text: "Roteiro mais ágil quando o caso atende aos requisitos do cartório.",
+  },
+  {
+    icon: CalculatorIcon,
+    text: "Estimativa clara de custos, impostos e próximos passos.",
+  },
+  {
+    icon: UsersIcon,
+    text: "Condução técnica para manter consenso e reduzir ruídos familiares.",
+  },
+];
+
 export function Solution() {
   return (
-    <section className="w-full min-h-svh relative p-4 overflow-hidden">
-      {/* background image */}
+    <section className="w-full min-h-svh relative px-4 py-16 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${imgBg})` }}
       />
 
-      {/* overlay forte */}
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-black/45" />
 
-      <div className="relative z-10 flex flex-col min-h-svh max-w-7xl mx-auto justify-center items-center">
-        <h1 className="text-3xl md:text-4xl font-serif font-semibold mx-auto text-center text-white pt-5 pb-12">
-          MAS O INVENTÁRIO EXTRAJUDICIAL RESOLVE!
-        </h1>
+      <div className="relative z-10 flex flex-col min-h-[calc(100svh-8rem)] max-w-7xl mx-auto justify-center items-center">
+        <div className="max-w-3xl text-center">
+          <p className="uppercase tracking-widest text-sm text-yellow-300 font-semibold">
+            A solução
+          </p>
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-white mt-3">
+            Inventário extrajudicial: um caminho mais claro quando há consenso.
+          </h2>
+          <p className="mt-4 text-base md:text-lg text-gray-100">
+            Com um advogado de inventário conduzindo a estratégia, a família
+            entende documentos, custos e prazos antes de tomar decisões.
+          </p>
+        </div>
 
-        <div className="flex flex-col gap-6 md:gap-8 max-w-xl w-full mx-auto">
-          <Item variant={"muted"} className="bg-background/70">
-            <ItemMedia variant="icon">
-              <FileTextIcon className="size-5 md:size-6 text-green-600" />
-            </ItemMedia>
-            <ItemDescription className="text-base md:text-lg text-black">
-              Processo ágil, sem anos de espera
-            </ItemDescription>
-          </Item>
+        <div className="flex flex-col gap-4 md:gap-5 max-w-2xl w-full mx-auto mt-10">
+          {solutionPoints.map(({ icon: Icon, text }) => (
+            <Item
+              key={text}
+              variant="muted"
+              className="bg-white/90 border border-white/20 px-4 py-4 shadow-lg"
+            >
+              <ItemMedia variant="icon">
+                <Icon className="size-5 md:size-6 text-green-700" />
+              </ItemMedia>
+              <ItemDescription className="text-base md:text-lg text-gray-950 line-clamp-none">
+                {text}
+              </ItemDescription>
+            </Item>
+          ))}
 
-          <Item variant={"muted"} className="bg-background/70">
-            <ItemMedia variant="icon">
-              <ClockIcon className="size-5 md:size-6 text-green-600" />
-            </ItemMedia>
-            <ItemDescription className="text-base md:text-lg text-black">
-              Menos burocracia, mais clareza
-            </ItemDescription>
-          </Item>
-
-          <Item variant={"muted"} className="bg-background/70">
-            <ItemMedia variant="icon">
-              <CalculatorIcon className="size-5 md:size-6 text-green-600" />
-            </ItemMedia>
-            <ItemDescription className="text-base md:text-lg text-black">
-              Custos controlados e previsíveis
-            </ItemDescription>
-          </Item>
-
-          <Item variant={"muted"} className="bg-background/70">
-            <ItemMedia variant="icon">
-              <UsersIcon className="size-5 md:size-6 text-green-600" />
-            </ItemMedia>
-            <ItemDescription className="text-base md:text-lg text-black">
-              Acordos feitos com respeito e equilíbrio
-            </ItemDescription>
-          </Item>
-
-          {/* Bloco de resultado (equivalente ao alerta no Problem) */}
-          <Item variant={"muted"} className="mt-1 px-5 bg-background/70">
-            <ItemMedia variant="icon" className="m-auto w-full text-black">
-              <CheckCircleIcon className="size-5 md:size-6 " /> Qualidade
-              garantida por:
-            </ItemMedia>
-            <div className="grid grid-cols-1 mx-auto gap-4 items-center">
-              {/* Lado Esquerdo: Imagem e Ícone */}
-              <div className="flex flex-col items-center gap-2 max-w-30%">
-                <img
-                  src={imgLogo}
-                  alt="Logo JaJ - José Arruda Jesus"
-                  className="max-w-70 rounded-4xl"
-                />
-              </div>
-
-              {/* Lado Direito: Textos */}
-              <div className="flex flex-col gap-2">
-                <ItemDescription className="w-full text-base md:text-lg text-center text-black">
-                  <p className="text-base md:text-xl">
-                    Segurança jurídica e acompanhamento profissional.
-                    <br />
-                    Resolvido de uma vez por todas.
-                  </p>
-                </ItemDescription>
+          <div className="mt-2 rounded-lg border border-yellow-500/30 bg-white/95 px-5 py-6 text-gray-950 shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center gap-5">
+              <img
+                src={imgLogo}
+                alt="Logo José Arruda Jesus"
+                className="w-40 rounded-lg bg-white p-2 shadow-sm"
+              />
+              <div className="text-center sm:text-left">
+                <p className="flex justify-center sm:justify-start items-center gap-2 text-sm uppercase tracking-widest font-semibold text-yellow-700">
+                  <CheckCircleIcon className="size-5" />
+                  Condução profissional
+                </p>
+                <p className="mt-2 text-base md:text-lg">
+                  Segurança jurídica, comunicação simples e acompanhamento
+                  próximo até a regularização do patrimônio.
+                </p>
               </div>
             </div>
-          </Item>
+          </div>
 
           <Button
-            onClick={redirectToWhatsapp}
-            className="relative min-h-20 w-full overflow-hidden rounded-xl p-0.5 text-xl font-bold text-white hover:scale-[1.03] transition-all duration-300"
+            onClick={() => redirectToWhatsapp()}
+            className="min-h-14 w-full rounded-lg text-base md:text-lg font-bold text-white bg-[#1f8f4d] hover:bg-[#187a41] shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            {/* borda */}
-            <span className="absolute inset-0 rounded-xs bg-[linear-gradient(50deg,#650000,#ffffff,#650000,#ffffff)] bg-size-[200%_100%] animate-[pulse_2.0s_linear_infinite]" />
-
-            {/* fundo */}
-            <span className="absolute inset-0.5 rounded-[10px] bg-foreground" />
-
-            {/* texto */}
-            <span className="relative z-10 flex gap-x-2">
-              <MessageCircleIcon className="size-5 md:size-6" />
-              Conversar com especialista agora
-            </span>
+            <MessageCircleIcon className="size-5 md:size-6" />
+            Verificar documentos necessários
           </Button>
 
-          <p className="text-sm text-white text-center">
-            Sem compromisso e 100% confidencial
+          <p className="text-sm text-white/90 text-center">
+            Sem compromisso e com orientação em linguagem direta.
           </p>
         </div>
       </div>

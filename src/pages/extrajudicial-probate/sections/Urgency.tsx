@@ -6,7 +6,6 @@ import {
   FileWarningIcon,
   MessageCircleIcon,
   TimerIcon,
-  ClockIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import imgBg from "@/assets/hero/problem.webp";
@@ -31,101 +30,95 @@ const cardVariants: Variants = {
   }),
 };
 
+const urgencyCards = [
+  {
+    icon: TrendingUpIcon,
+    text: "Custos, impostos e exigências podem ficar mais difíceis de organizar.",
+  },
+  {
+    icon: UsersIcon,
+    text: "Quanto mais tempo passa, maior a chance de ruídos entre herdeiros.",
+  },
+  {
+    icon: FileWarningIcon,
+    text: "Bens sem regularização limitam venda, transferência e planejamento.",
+  },
+];
+
 export function Urgency() {
   return (
     <section
       className="w-full min-h-svh bg-cover bg-center bg-no-repeat relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.6)), url(${imgBg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.74), rgba(30, 20, 10, 0.55)), url(${imgBg})`,
       }}
     >
-      <div className="w-full min-h-svh flex items-center justify-center px-4 py-16">
+      <div className="w-full min-h-[calc(100svh-6rem)] flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
-          {/* LEFT SIDE - COPY */}
           <div className="text-white space-y-6">
-            <p className="uppercase tracking-widest text-sm text-gray-300">
-              TOME A INICIATIVA
+            <p className="uppercase tracking-widest text-sm text-yellow-300 font-semibold">
+              Urgência responsável
             </p>
 
-            <h1 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
-              <ClockIcon className="size-10 md:size-15 animate-spin" />
-              Adiar só torna tudo mais caro — e mais difícil.
-            </h1>
+            <h2 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
+              <TimerIcon className="mb-4 size-10 md:size-12 text-yellow-400" />
+              Adiar o inventário raramente deixa o caminho mais simples.
+            </h2>
 
-            <p className="text-base md:text-lg text-gray-300">
-              Cada dia que passa sem resolver o inventário não é neutro.
-              <br />
-              <span className="text-white font-semibold">
-                Ele joga contra você.
-              </span>
+            <p className="text-base md:text-lg text-gray-200">
+              Resolver cedo não é agir com pressa. É ganhar clareza sobre
+              documentos, custos e decisões antes que a situação fique mais
+              difícil de administrar.
             </p>
+
             <Button
-              onClick={redirectToWhatsapp}
-              className="min-h-20 w-full text-base font-bold rounded-xl text-white bg-red-800 shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.02]"
+              onClick={() => redirectToWhatsapp()}
+              className="min-h-14 w-full text-base md:text-lg font-bold rounded-lg text-white bg-[#8f1d1d] hover:bg-[#741717] shadow-lg transition-all duration-300 hover:scale-[1.02]"
             >
-              <span className="text-white-600 flex gap-x-2">
-                <MessageCircleIcon className="size-5 md:size-6" />
-                QUERO RESOLVER AGORA MESMO!
-              </span>
+              <MessageCircleIcon className="size-5 md:size-6" />
+              Quero avaliar meu inventário
             </Button>
 
-            <div className="border-l-4 border-red-500 pl-4">
-              <p className="text-base md:text-lg text-gray-200">
-                O que hoje é simples, amanhã pode virar um problema maior.
+            <div className="border-l-4 border-yellow-500 pl-4">
+              <p className="text-base md:text-lg text-gray-100">
+                Uma conversa inicial ajuda a definir se o caso pode seguir pelo
+                cartório e quais documentos devem ser reunidos primeiro.
               </p>
             </div>
           </div>
 
-          {/* RIGHT SIDE - CARDS COM ANIMAÇÃO */}
           <div className="grid gap-4">
-            {[
-              {
-                icon: <TrendingUpIcon className="text-red-600 mt-1" />,
-                text: "Impostos e multas continuam crescendo",
-              },
-              {
-                icon: <UsersIcon className="text-red-600 mt-1" />,
-                text: "Pequenos desentendimentos viram grandes conflitos",
-              },
-              {
-                icon: <FileWarningIcon className="text-red-600 mt-1" />,
-                text: "A documentação se complica com o tempo",
-              },
-            ].map((item, i) => (
+            {urgencyCards.map(({ icon: Icon, text }, i) => (
               <motion.div
-                key={i}
+                key={text}
                 custom={i}
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="bg-white rounded-xl p-5 shadow-lg flex items-start gap-4 transition-all hover:shadow-xl hover:-translate-y-1"
+                className="bg-white/95 rounded-lg p-5 shadow-lg flex items-start gap-4 transition-all hover:shadow-xl hover:-translate-y-1"
               >
-                {item.icon}
-                <p className="text-base md:text-lg text-gray-800">
-                  {item.text}
-                </p>
+                <Icon className="mt-1 size-6 shrink-0 text-red-700" />
+                <p className="text-base md:text-lg text-gray-900">{text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* BOTTOM STRIP */}
-      <div className="w-full bg-red-800 text-white py-6 px-4 text-center">
+      <div className="w-full bg-[#7f1d1d] text-white py-6 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-2">
           <p className="text-base md:text-lg">
-            E enquanto você espera, o patrimônio segue bloqueado — sem cumprir o
-            papel dele.
+            Patrimônio regularizado traz segurança para a família decidir com
+            tranquilidade.
           </p>
 
           <p className="text-base md:text-lg font-semibold">
-            Resolver agora não é pressa.
-            <br />É evitar prejuízo, desgaste e dor de cabeça.
+            O próximo passo é simples: entender o cenário e montar o roteiro.
           </p>
 
           <p className="text-sm md:text-base opacity-90">
-            Quanto antes você agir, mais rápido você encerra esse capítulo.
+            Orientação inicial pelo WhatsApp, sem compromisso.
           </p>
         </div>
       </div>

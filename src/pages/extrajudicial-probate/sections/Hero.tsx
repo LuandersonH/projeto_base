@@ -1,99 +1,113 @@
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
-import heroWpp from "@/assets/hero/logo_horizontal.png";
+import {
+  BadgeCheckIcon,
+  CheckCircle2Icon,
+  MessageCircleIcon,
+  ShieldCheckIcon,
+} from "lucide-react";
+
+const heroHighlights = [
+  "Análise inicial",
+  "Documentos orientados",
+  "Atendimento direto",
+];
+
+const extrajudicialRequirements = [
+  "Herdeiros maiores, capazes e em acordo",
+  "Documentação essencial organizada",
+  "Condução em cartório, quando o caso permite",
+];
+
 export function Hero() {
   return (
     <section
-      className="relative w-full min-h-svh flex items-center overflow-hidden bg-cover bg-center"
+      className="relative w-full min-h-[92svh] flex items-center overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: `
           linear-gradient(
             90deg,
-            rgba(0,0,0,0.82) 0%,
-            rgba(0,0,0,0.72) 38%,
-            rgba(0,0,0,0.55) 60%,
-            rgba(0,0,0,0.72) 100%
+            rgba(6,6,6,0.90) 0%,
+            rgba(6,6,6,0.78) 42%,
+            rgba(6,6,6,0.58) 68%,
+            rgba(6,6,6,0.76) 100%
           ),
           url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80')
         `,
       }}
     >
-      {/* Glow decor */}
-      <div className="absolute top-20 left-10 h-44 w-44 rounded-full bg-yellow-500/20 blur-3xl" />
-      <div className="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl" />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-8 items-center">
-        {/* Left Content */}
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 px-4 py-2 text-sm text-yellow-400 font-medium">
-            Atendimento rápido e seguro
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 py-14 md:py-16 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
+        <div className="space-y-7">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-yellow-500/30 bg-black/40 px-4 py-2 text-xs sm:text-sm text-yellow-300 font-semibold tracking-wide uppercase backdrop-blur">
+            <ShieldCheckIcon className="size-4" />
+            Advogado para inventário extrajudicial
           </div>
 
           <div className="space-y-5">
-            <h1 className="text-4xl md:text-5xl leading-tight font-serif font-semibold text-white">
-              INVENTÁRIO RÁPIDO
-              <br />
-              <span className="text-yellow-500">SEM DOR DE CABEÇA</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-serif font-semibold text-white">
+              Inventário extrajudicial com clareza,
+              <span className="block text-yellow-400">segurança e rapidez</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed">
-              Resolva tudo com <strong>segurança e agilidade</strong>, sem
-              burocracia desnecessária.
+            <p className="text-lg md:text-xl text-gray-100 max-w-2xl leading-relaxed">
+              Receba orientação jurídica para resolver a partilha em cartório,
+              quando a família está em consenso e a documentação permite.
             </p>
 
-            <p className="text-base md:text-lg text-gray-300 max-w-xl">
-              Evite anos de espera, conflitos familiares e surpresas no caminho.
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl">
+              Menos burocracia, menos desgaste familiar e um caminho mais
+              previsível para regularizar o patrimônio.
             </p>
           </div>
 
-          {/* <Button className="min-h-20 w-full text-base font-bold rounded-xl text-white hover:bg-green-500 shadow-xl transition-all duration-300 hover:scale-[1.02]">
-            Conversar com um especialista agora
-          </Button> */}
+          <div className="space-y-3">
+            <Button
+              onClick={() => redirectToWhatsapp()}
+              className="min-h-14 w-full sm:w-auto px-6 text-base md:text-lg font-bold rounded-lg text-white shadow-xl bg-[#1f8f4d] hover:bg-[#187a41] transition-all duration-300 hover:scale-[1.02]"
+              aria-label="Conversar com especialista em inventário extrajudicial pelo WhatsApp"
+            >
+              <MessageCircleIcon className="size-5" />
+              Falar com especialista no WhatsApp
+            </Button>
+            <p className="text-sm text-gray-300">
+              Primeira conversa confidencial para entender documentos, herdeiros
+              e próximos passos.
+            </p>
+          </div>
 
-          <Button
-            onClick={redirectToWhatsapp}
-            className="min-h-15 w-full text-xl font-bold rounded-xl text-white  shadow-lg animate-pulse-soft transition-all duration-300 hover:scale-[1.03] border-yellow-500 bg-green-600/35"
-          >
-            Conversar com especialista agora
-          </Button>
-          {/* bg-green-800 hover:bg-green-500 */}
-          <div className="grid sm:grid-cols-3 gap-3 pt-2">
-            {["Rápido", "Simples", "Eficiente"].map((item) => (
+          <div className="grid sm:grid-cols-3 gap-3 pt-1">
+            {heroHighlights.map((item) => (
               <div
                 key={item}
-                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-200 text-center backdrop-blur-sm"
+                className="rounded-lg border border-white/10 bg-white/10 px-4 py-3 text-sm font-medium text-gray-100 text-center backdrop-blur-sm"
               >
-                ✓ {item}
+                <CheckCircle2Icon className="mx-auto mb-2 size-4 text-yellow-400" />
+                {item}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right Card */}
         <div className="hidden lg:flex justify-end">
-          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl p-8 shadow-2xl">
-            <p className="text-sm uppercase tracking-widest text-yellow-400 font-semibold">
-              Solução inteligente
+          <div className="w-full max-w-md rounded-lg border border-white/10 bg-black/40 backdrop-blur-xl p-7 shadow-2xl">
+            <p className="text-sm uppercase tracking-widest text-yellow-300 font-semibold">
+              Caminho mais simples
             </p>
 
-            <h3 className="mt-3 text-3xl font-serif text-white leading-snug">
-              Resolva o inventário com tranquilidade.
-            </h3>
+            <h2 className="mt-3 text-3xl font-serif text-white leading-snug">
+              Veja se o seu caso pode ser resolvido sem processo judicial.
+            </h2>
 
             <p className="mt-4 text-gray-300 leading-relaxed">
-              Cuidamos de cada etapa para você focar no que importa: sua família
-              e sua paz.
+              Na conversa inicial, avaliamos os requisitos e indicamos o roteiro
+              mais seguro para iniciar o inventário.
             </p>
 
             <div className="mt-6 space-y-4">
-              {[
-                "Análise rápida do caso",
-                "Orientação clara desde o início",
-                "Acompanhamento próximo",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 text-white">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-yellow-500 text-black text-sm font-bold">
-                    ✓
+              {extrajudicialRequirements.map((item) => (
+                <div key={item} className="flex items-start gap-3 text-white">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-yellow-500 text-black">
+                    <BadgeCheckIcon className="size-4" />
                   </span>
                   <span>{item}</span>
                 </div>
@@ -101,10 +115,11 @@ export function Hero() {
             </div>
 
             <Button
-              onClick={redirectToWhatsapp}
-              className="w-full mt-8 min-h-16 rounded-xl bg-yellow-600 text-white hover:bg-yellow-500 font-bold text-xl"
+              onClick={() => redirectToWhatsapp()}
+              className="w-full mt-8 min-h-14 rounded-lg bg-yellow-600 text-white hover:bg-yellow-500 font-bold text-base"
+              aria-label="Ver se meu caso pode ser inventário extrajudicial"
             >
-              Quero começar
+              Ver se meu caso se encaixa
             </Button>
           </div>
         </div>
