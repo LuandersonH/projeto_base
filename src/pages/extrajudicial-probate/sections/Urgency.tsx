@@ -8,7 +8,7 @@ import {
   TimerIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import imgBg from "@/assets/hero/problem.webp";
+import imgBg from "@/assets/hero/fundo_authority.png";
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
 
@@ -50,22 +50,22 @@ export function Urgency() {
     <section
       className="w-full min-h-svh bg-cover bg-center bg-no-repeat relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.74), rgba(30, 20, 10, 0.55)), url(${imgBg})`,
+        backgroundImage: `linear-gradient(180deg, rgba(16, 22, 23, 0.92), rgba(16, 22, 23, 0.86) 46%, rgba(111, 48, 43, 0.74) 100%), url(${imgBg})`,
       }}
     >
       <div className="w-full min-h-[calc(100svh-6rem)] flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           <div className="text-white space-y-6">
-            <p className="uppercase tracking-widest text-sm text-yellow-300 font-semibold">
+            <p className="uppercase tracking-widest text-sm text-legal-gold-soft font-semibold">
               Urgência responsável
             </p>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
-              <TimerIcon className="mb-4 size-10 md:size-12 text-yellow-400" />
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold leading-[1.18]">
+              <TimerIcon className="mb-4 size-10 text-legal-gold-soft" />
               Adiar o inventário raramente deixa o caminho mais simples.
             </h2>
 
-            <p className="text-base md:text-lg text-gray-200">
+            <p className="text-base md:text-lg text-legal-paper/85 leading-8">
               Resolver cedo não é agir com pressa. É ganhar clareza sobre
               documentos, custos e decisões antes que a situação fique mais
               difícil de administrar.
@@ -73,14 +73,14 @@ export function Urgency() {
 
             <Button
               onClick={() => redirectToWhatsapp()}
-              className="min-h-14 w-full text-base md:text-lg font-bold rounded-lg text-white bg-[#8f1d1d] hover:bg-[#741717] shadow-lg transition-all duration-300 hover:scale-[1.02]"
+              className="min-h-14 w-full text-base font-bold rounded-lg text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02]"
             >
               <MessageCircleIcon className="size-5 md:size-6" />
               Quero avaliar meu inventário
             </Button>
 
-            <div className="border-l-4 border-yellow-500 pl-4">
-              <p className="text-base md:text-lg text-gray-100">
+            <div className="border-l-4 border-legal-gold pl-4">
+              <p className="text-base text-legal-paper/90 leading-7">
                 Uma conversa inicial ajuda a definir se o caso pode seguir pelo
                 cartório e quais documentos devem ser reunidos primeiro.
               </p>
@@ -96,24 +96,24 @@ export function Urgency() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="bg-white/95 rounded-lg p-5 shadow-lg flex items-start gap-4 transition-all hover:shadow-xl hover:-translate-y-1"
+                className="bg-legal-paper/95 rounded-lg border border-legal-gold/20 p-5 shadow-lg flex items-start gap-4 transition-all hover:shadow-xl hover:-translate-y-1"
               >
-                <Icon className="mt-1 size-6 shrink-0 text-red-700" />
-                <p className="text-base md:text-lg text-gray-900">{text}</p>
+                <Icon className="mt-1 size-6 shrink-0 text-legal-burgundy" />
+                <p className="text-base text-legal-charcoal leading-7">{text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="w-full bg-[#7f1d1d] text-white py-6 px-4 text-center">
+      <div className="w-full bg-legal-burgundy text-white py-6 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-2">
-          <p className="text-base md:text-lg">
+          <p className="text-base leading-7">
             Patrimônio regularizado traz segurança para a família decidir com
             tranquilidade.
           </p>
 
-          <p className="text-base md:text-lg font-semibold">
+          <p className="text-base font-semibold leading-7">
             O próximo passo é simples: entender o cenário e montar o roteiro.
           </p>
 

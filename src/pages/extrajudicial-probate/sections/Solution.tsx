@@ -33,23 +33,25 @@ const solutionPoints = [
 
 export function Solution() {
   return (
-    <section className="w-full min-h-svh relative px-4 py-16 overflow-hidden">
+    <section className="w-full min-h-svh relative px-4 py-16 overflow-hidden bg-legal-paper">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${imgBg})` }}
+        style={{
+          backgroundImage: `linear-gradient(180deg, rgba(247, 242, 232, 0.98), rgba(232, 220, 198, 0.94)), url(${imgBg})`,
+        }}
       />
 
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-legal-ink" />
 
       <div className="relative z-10 flex flex-col min-h-[calc(100svh-8rem)] max-w-7xl mx-auto justify-center items-center">
         <div className="max-w-3xl text-center">
-          <p className="uppercase tracking-widest text-sm text-yellow-300 font-semibold">
+          <p className="uppercase tracking-widest text-sm text-legal-burgundy font-semibold">
             A solução
           </p>
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-white mt-3">
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-legal-ink mt-3 leading-[1.18]">
             Inventário extrajudicial: um caminho mais claro quando há consenso.
           </h2>
-          <p className="mt-4 text-base md:text-lg text-gray-100">
+          <p className="mt-4 text-base md:text-lg text-legal-slate leading-8">
             Com um advogado de inventário conduzindo a estratégia, a família
             entende documentos, custos e prazos antes de tomar decisões.
           </p>
@@ -60,30 +62,30 @@ export function Solution() {
             <Item
               key={text}
               variant="muted"
-              className="bg-white/90 border border-white/20 px-4 py-4 shadow-lg"
+              className="bg-white/95 border border-legal-sand px-4 py-4 shadow-sm"
             >
               <ItemMedia variant="icon">
-                <Icon className="size-5 md:size-6 text-green-700" />
+                <Icon className="size-5 md:size-6 text-legal-green" />
               </ItemMedia>
-              <ItemDescription className="text-base md:text-lg text-gray-950 line-clamp-none">
+              <ItemDescription className="text-base text-legal-charcoal leading-7 line-clamp-none">
                 {text}
               </ItemDescription>
             </Item>
           ))}
 
-          <div className="mt-2 rounded-lg border border-yellow-500/30 bg-white/95 px-5 py-6 text-gray-950 shadow-xl">
+          <div className="mt-2 rounded-lg border border-legal-gold/35 bg-white/95 px-5 py-6 text-legal-charcoal shadow-xl">
             <div className="flex flex-col sm:flex-row items-center gap-5">
               <img
                 src={imgLogo}
                 alt="Logo José Arruda Jesus"
-                className="w-40 rounded-lg bg-white p-2 shadow-sm"
+                className="w-36 rounded-lg bg-white p-2 shadow-sm"
               />
               <div className="text-center sm:text-left">
-                <p className="flex justify-center sm:justify-start items-center gap-2 text-sm uppercase tracking-widest font-semibold text-yellow-700">
+                <p className="flex justify-center sm:justify-start items-center gap-2 text-sm uppercase tracking-widest font-semibold text-legal-burgundy">
                   <CheckCircleIcon className="size-5" />
                   Condução profissional
                 </p>
-                <p className="mt-2 text-base md:text-lg">
+                <p className="mt-2 text-base leading-7">
                   Segurança jurídica, comunicação simples e acompanhamento
                   próximo até a regularização do patrimônio.
                 </p>
@@ -93,13 +95,13 @@ export function Solution() {
 
           <Button
             onClick={() => redirectToWhatsapp()}
-            className="min-h-14 w-full rounded-lg text-base md:text-lg font-bold text-white bg-[#1f8f4d] hover:bg-[#187a41] shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
             <MessageCircleIcon className="size-5 md:size-6" />
             Verificar documentos necessários
           </Button>
 
-          <p className="text-sm text-white/90 text-center">
+          <p className="text-sm text-legal-slate text-center leading-6">
             Sem compromisso e com orientação em linguagem direta.
           </p>
         </div>

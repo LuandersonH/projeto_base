@@ -69,25 +69,25 @@ function handleQualifiedContact(event: FormEvent<HTMLFormElement>) {
 
 export function Contact() {
   return (
-    <section className="w-full min-h-svh bg-[#0a0a0a] relative pb-24 md:pb-0">
+    <section className="w-full min-h-svh bg-legal-ink relative pb-24 md:pb-0">
       <div className="w-full min-h-svh flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           <div className="text-white space-y-6">
-            <p className="uppercase tracking-widest text-sm text-yellow-400 font-semibold">
+            <p className="uppercase tracking-widest text-sm text-legal-gold-soft font-semibold">
               Contato
             </p>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold leading-tight">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold leading-[1.18]">
               Pronto para entender o melhor caminho para o inventário?
             </h2>
 
-            <p className="text-base md:text-lg text-gray-300">
+            <p className="text-base md:text-lg text-legal-paper/80 leading-8">
               Fale com um especialista em inventário extrajudicial e receba uma
               orientação inicial sobre documentos, custos e próximos passos.
             </p>
 
-            <div className="border-l-4 border-yellow-500 pl-4">
-              <p className="text-base md:text-lg text-gray-200">
+            <div className="border-l-4 border-legal-gold pl-4">
+              <p className="text-base text-legal-paper/90 leading-7">
                 Você não precisa ter todas as respostas agora. A primeira
                 conversa serve justamente para organizar o cenário.
               </p>
@@ -95,13 +95,13 @@ export function Contact() {
 
             <Button
               onClick={() => redirectToWhatsapp()}
-              className="min-h-14 w-full text-base md:text-lg font-bold rounded-lg gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white shadow-lg transition-all duration-300 hover:scale-[1.02]"
+              className="min-h-14 w-full text-base font-bold rounded-lg gap-3 bg-legal-green hover:bg-legal-green-hover text-white shadow-lg transition-all duration-300 hover:scale-[1.02]"
             >
               <MessageCircleIcon className="size-5 md:size-6" />
               Prefiro chamar direto no WhatsApp
             </Button>
 
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-white/60">
               Atendimento confidencial. Análise inicial sem compromisso.
             </p>
           </div>
@@ -109,47 +109,47 @@ export function Contact() {
           <div className="grid gap-4">
             <form
               onSubmit={handleQualifiedContact}
-              className="rounded-lg border border-white/10 bg-white p-5 md:p-6 shadow-2xl"
+              className="rounded-lg border border-legal-gold/25 bg-legal-paper p-5 md:p-6 shadow-2xl"
             >
-              <p className="text-sm uppercase tracking-widest text-yellow-700 font-semibold">
+              <p className="text-sm uppercase tracking-widest text-legal-burgundy font-semibold">
                 Pré-atendimento
               </p>
-              <h3 className="mt-2 text-2xl font-serif font-semibold text-gray-950">
+              <h3 className="mt-2 text-2xl font-serif font-semibold text-legal-ink">
                 Envie um resumo do caso
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-legal-slate">
                 Leva menos de um minuto e já abre uma conversa no WhatsApp.
               </p>
 
               <div className="mt-5 grid gap-3">
-                <label className="grid gap-1 text-sm font-medium text-gray-800">
+                <label className="grid gap-1 text-sm font-medium text-legal-charcoal">
                   Nome
                   <input
                     name="name"
                     required
                     autoComplete="name"
                     placeholder="Seu nome"
-                    className="min-h-11 rounded-lg border border-gray-300 px-3 text-base outline-none focus:border-yellow-600 focus:ring-2 focus:ring-yellow-600/20"
+                    className="min-h-11 rounded-lg border border-legal-sand bg-white px-3 text-base outline-none focus:border-legal-gold focus:ring-2 focus:ring-legal-gold/25"
                   />
                 </label>
 
-                <label className="grid gap-1 text-sm font-medium text-gray-800">
+                <label className="grid gap-1 text-sm font-medium text-legal-charcoal">
                   Cidade/UF
                   <input
                     name="city"
                     autoComplete="address-level2"
                     placeholder="Ex.: Sorocaba/SP"
-                    className="min-h-11 rounded-lg border border-gray-300 px-3 text-base outline-none focus:border-yellow-600 focus:ring-2 focus:ring-yellow-600/20"
+                    className="min-h-11 rounded-lg border border-legal-sand bg-white px-3 text-base outline-none focus:border-legal-gold focus:ring-2 focus:ring-legal-gold/25"
                   />
                 </label>
 
-                <label className="grid gap-1 text-sm font-medium text-gray-800">
+                <label className="grid gap-1 text-sm font-medium text-legal-charcoal">
                   Situação dos herdeiros
                   <select
                     name="caseStatus"
                     required
                     defaultValue=""
-                    className="min-h-11 rounded-lg border border-gray-300 px-3 text-base outline-none focus:border-yellow-600 focus:ring-2 focus:ring-yellow-600/20"
+                    className="min-h-11 rounded-lg border border-legal-sand bg-white px-3 text-base outline-none focus:border-legal-gold focus:ring-2 focus:ring-legal-gold/25"
                   >
                     <option value="" disabled>
                       Selecione uma opção
@@ -160,13 +160,13 @@ export function Contact() {
                   </select>
                 </label>
 
-                <label className="grid gap-1 text-sm font-medium text-gray-800">
+                <label className="grid gap-1 text-sm font-medium text-legal-charcoal">
                   Principal bem envolvido
                   <select
                     name="assetType"
                     required
                     defaultValue=""
-                    className="min-h-11 rounded-lg border border-gray-300 px-3 text-base outline-none focus:border-yellow-600 focus:ring-2 focus:ring-yellow-600/20"
+                    className="min-h-11 rounded-lg border border-legal-sand bg-white px-3 text-base outline-none focus:border-legal-gold focus:ring-2 focus:ring-legal-gold/25"
                   >
                     <option value="" disabled>
                       Selecione uma opção
@@ -179,26 +179,26 @@ export function Contact() {
                   </select>
                 </label>
 
-                <label className="grid gap-1 text-sm font-medium text-gray-800">
+                <label className="grid gap-1 text-sm font-medium text-legal-charcoal">
                   Observações
                   <textarea
                     name="notes"
                     rows={3}
                     placeholder="Ex.: já tenho certidão de óbito, escritura, documentos dos herdeiros..."
-                    className="rounded-lg border border-gray-300 px-3 py-2 text-base outline-none resize-none focus:border-yellow-600 focus:ring-2 focus:ring-yellow-600/20"
+                    className="rounded-lg border border-legal-sand bg-white px-3 py-2 text-base outline-none resize-none focus:border-legal-gold focus:ring-2 focus:ring-legal-gold/25"
                   />
                 </label>
               </div>
 
               <Button
                 type="submit"
-                className="mt-5 min-h-14 w-full rounded-lg bg-[#1f8f4d] hover:bg-[#187a41] text-base font-bold text-white"
+                className="mt-5 min-h-14 w-full rounded-lg bg-legal-green hover:bg-legal-green-hover text-base font-bold text-white"
               >
                 <SendIcon className="size-5" />
                 Enviar resumo pelo WhatsApp
               </Button>
 
-              <p className="mt-3 text-xs text-gray-500">
+              <p className="mt-3 text-xs text-legal-slate">
                 Seus dados serão usados apenas para iniciar o atendimento.
               </p>
             </form>
@@ -211,14 +211,14 @@ export function Contact() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="bg-white/95 rounded-lg p-4 shadow-lg flex items-start gap-4 hover:shadow-xl hover:-translate-y-1"
+                className="bg-legal-paper/95 rounded-lg p-4 shadow-lg flex items-start gap-4 hover:shadow-xl hover:-translate-y-1"
               >
-                <Icon className="mt-1 size-5 shrink-0 text-yellow-700" />
+                <Icon className="mt-1 size-5 shrink-0 text-legal-burgundy" />
                 <div>
-                  <p className="text-base md:text-lg text-gray-900 font-semibold">
+                  <p className="text-base text-legal-ink font-semibold">
                     {title}
                   </p>
-                  <p className="text-sm text-gray-600 mt-1">{desc}</p>
+                  <p className="text-sm text-legal-slate mt-1 leading-6">{desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -226,14 +226,14 @@ export function Contact() {
         </div>
       </div>
 
-      <div className="w-full bg-yellow-500 text-black py-6 px-4 text-center">
+      <div className="w-full bg-legal-gold text-legal-ink py-6 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-2">
-          <p className="text-base md:text-lg">
+          <p className="text-base leading-7">
             Quanto antes o cenário é organizado, mais previsível fica o
             inventário.
           </p>
 
-          <p className="text-base md:text-lg font-semibold">
+          <p className="text-base font-semibold leading-7">
             Dê o primeiro passo com orientação profissional e sem compromisso.
           </p>
         </div>

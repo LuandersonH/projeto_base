@@ -39,6 +39,16 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
+  --color-legal-ink: var(--legal-ink);
+  --color-legal-charcoal: var(--legal-charcoal);
+  --color-legal-slate: var(--legal-slate);
+  --color-legal-paper: var(--legal-paper);
+  --color-legal-sand: var(--legal-sand);
+  --color-legal-gold: var(--legal-gold);
+  --color-legal-gold-soft: var(--legal-gold-soft);
+  --color-legal-burgundy: var(--legal-burgundy);
+  --color-legal-green: var(--legal-green);
+  --color-legal-green-hover: var(--legal-green-hover);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
@@ -98,6 +108,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --legal-ink: #101617;
+  --legal-charcoal: #1a2324;
+  --legal-slate: #344244;
+  --legal-paper: #f7f2e8;
+  --legal-sand: #e8dcc6;
+  --legal-gold: #c9a45d;
+  --legal-gold-soft: #ead7a6;
+  --legal-burgundy: #6f302b;
+  --legal-green: #1f6f4a;
+  --legal-green-hover: #185c3d;
 }
 
 .dark {
