@@ -13,11 +13,14 @@ const commitments = [
 export function Authority() {
   return (
     <section
-      className="w-full min-h-svh flex flex-col justify-center items-center px-4 py-16 bg-cover bg-left bg-no-repeat"
+      className="w-full min-h-svh flex flex-col justify-center items-center px-4 py-16 bg-cover bg-left bg-no-repeat relative"
+      // className=" w-full min-h-svh bg-cover bg-center bg-no-repeat px-4 py-16 overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(16, 22, 23, 0.97), rgba(16, 22, 23, 0.88) 48%, rgba(111, 48, 43, 0.72) 100%), url(${imgBg})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(232, 220, 198, 0.94) 0%, rgba(232, 220, 198, 0.72) 2%, rgba(38, 14, 14, 0.616)), url(${imgBg})`,
       }}
     >
+      <div className="absolute inset-x-0 bottom-0 h-6 bg-linear-to-b from-transparent to-rgba(105, 0, 0, 0.616)" />
+
       <div className="max-w-4xl space-y-4 text-center mb-8 md:mb-10">
         <p className="text-sm tracking-widest uppercase text-legal-gold-soft font-semibold">
           O advogado

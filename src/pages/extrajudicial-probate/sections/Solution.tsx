@@ -37,11 +37,11 @@ export function Solution() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(247, 242, 232, 0.98), rgba(232, 220, 198, 0.94)), url(${imgBg})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(247, 242, 232, 0.98), rgba(232, 220, 198, 0.94)), url(${imgBg})`,
         }}
       />
 
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-legal-ink" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-amber-100" />
 
       <div className="relative z-10 flex flex-col min-h-[calc(100svh-8rem)] max-w-7xl mx-auto justify-center items-center">
         <div className="max-w-3xl text-center">
