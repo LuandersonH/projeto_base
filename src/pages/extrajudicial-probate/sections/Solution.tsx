@@ -4,13 +4,13 @@ import {
   CheckCircleIcon,
   ClockIcon,
   FileTextIcon,
-  MessageCircleIcon,
   UsersIcon,
 } from "lucide-react";
 import imgBg from "@/assets/hero/lampada.png";
 import imgLogo from "@/assets/hero/logo.png";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 
 const solutionPoints = [
   {
@@ -33,7 +33,7 @@ const solutionPoints = [
 
 export function Solution() {
   return (
-    <section className="w-full min-h-svh relative px-4 py-16 overflow-hidden bg-legal-paper">
+    <section className="w-full min-h-svh relative px-4 pt-12 pb-28 md:py-16 overflow-hidden bg-legal-paper">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -48,10 +48,10 @@ export function Solution() {
           <p className="uppercase tracking-widest text-sm text-legal-burgundy font-semibold">
             A solução
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-legal-ink mt-3 leading-[1.18]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-legal-ink mt-3 leading-[1.16] md:leading-[1.18]">
             Inventário extrajudicial: um caminho mais claro quando há consenso.
           </h2>
-          <p className="mt-4 text-base md:text-lg text-legal-slate leading-8">
+          <p className="mt-4 text-base md:text-lg text-legal-slate leading-7 md:leading-8">
             Com um advogado de inventário conduzindo a estratégia, a família
             entende documentos, custos e prazos antes de tomar decisões.
           </p>
@@ -67,7 +67,7 @@ export function Solution() {
               <ItemMedia variant="icon">
                 <Icon className="size-5 md:size-6 text-legal-green" />
               </ItemMedia>
-              <ItemDescription className="text-base text-legal-charcoal leading-7 line-clamp-none">
+              <ItemDescription className="text-[0.95rem] sm:text-base text-legal-charcoal leading-7 line-clamp-none">
                 {text}
               </ItemDescription>
             </Item>
@@ -81,11 +81,11 @@ export function Solution() {
                 className="w-36 rounded-lg bg-white p-2 shadow-sm"
               />
               <div className="text-center sm:text-left">
-                <p className="flex justify-center sm:justify-start items-center gap-2 text-sm uppercase tracking-widest font-semibold text-legal-burgundy">
+                <p className="flex justify-center sm:justify-start items-center gap-2 text-xs sm:text-sm uppercase tracking-widest font-semibold text-legal-burgundy">
                   <CheckCircleIcon className="size-5" />
                   Condução profissional
                 </p>
-                <p className="mt-2 text-base leading-7">
+                <p className="mt-2 text-[0.95rem] sm:text-base leading-7">
                   Segurança jurídica, comunicação simples e acompanhamento
                   próximo até a regularização do patrimônio.
                 </p>
@@ -95,9 +95,9 @@ export function Solution() {
 
           <Button
             onClick={() => redirectToWhatsapp()}
-            className="min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02] whitespace-normal"
           >
-            <MessageCircleIcon className="size-5 md:size-6" />
+            <WhatsAppIcon className="size-5 md:size-6" />
             Verificar documentos necessários
           </Button>
 

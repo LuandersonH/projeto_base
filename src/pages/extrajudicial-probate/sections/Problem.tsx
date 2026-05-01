@@ -5,11 +5,11 @@ import {
   FileTextIcon,
   ClockIcon,
   TriangleAlertIcon,
-  MessageCircleIcon,
 } from "lucide-react";
 import imgBg from "@/assets/hero/second_problem.jpg";
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
+import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 
 const painPoints = [
   {
@@ -33,22 +33,22 @@ const painPoints = [
 export function Problem() {
   return (
     <section
-      className="relative w-full min-h-svh bg-cover bg-center bg-no-repeat px-4 py-16 overflow-hidden"
+      className="relative w-full min-h-svh bg-cover bg-center bg-no-repeat px-4 pt-12 pb-28 md:py-16 overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(16, 22, 23, 0.98) 0%, rgba(16, 22, 23, 0.86) 42%, rgba(111, 48, 43, 0.70) 100%), url(${imgBg})`,
       }}
     >
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-legal-paper" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-legal-paper" />
 
       <div className="flex flex-col max-w-7xl min-h-[calc(100svh-8rem)] justify-center items-center mx-auto">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="uppercase tracking-widest text-sm text-legal-gold-soft font-semibold">
+          {/* <p className="uppercase tracking-widest text-sm text-legal-gold-soft font-semibold">
             O problema
-          </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mt-3 leading-[1.18]">
+          </p> */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-white mt-3 leading-[1.16] md:leading-[1.18]">
             Inventário não precisa virar anos de espera e desgaste familiar.
           </h2>
-          <p className="mt-4 text-base md:text-lg text-legal-paper/85 leading-8">
+          <p className="mt-4 text-base md:text-lg text-legal-paper/85 leading-7 md:leading-8">
             Para quem acabou de perder alguém, a burocracia pode parecer ainda
             mais pesada. O primeiro passo é entender o que pode ser resolvido em
             cartório e o que exige atenção antes de avançar.
@@ -65,7 +65,7 @@ export function Problem() {
               <ItemMedia variant="icon">
                 <Icon className="size-5 md:size-6 text-legal-burgundy" />
               </ItemMedia>
-              <ItemDescription className="text-base text-legal-charcoal leading-7 line-clamp-none">
+              <ItemDescription className="text-[0.95rem] sm:text-base text-legal-charcoal leading-7 line-clamp-none">
                 {text}
               </ItemDescription>
             </Item>
@@ -84,9 +84,9 @@ export function Problem() {
 
           <Button
             onClick={() => redirectToWhatsapp()}
-            className="min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02] whitespace-normal"
           >
-            <MessageCircleIcon className="size-5 md:size-6" />
+            <WhatsAppIcon className="size-5 md:size-6" />
             Quero orientação antes de iniciar
           </Button>
 

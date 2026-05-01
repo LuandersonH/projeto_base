@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 import { redirectToWhatsapp } from "@/constants/contact";
 import {
   BadgeCheckIcon,
   CheckCircle2Icon,
-  MessageCircleIcon,
   ShieldCheckIcon,
 } from "lucide-react";
 
@@ -36,24 +36,24 @@ export function Hero() {
         `,
       }}
     >
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-legal-ink" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-legal-ink" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 py-16 md:py-20 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
-        <div className="space-y-7">
-          <div className="inline-flex items-center gap-2 rounded-lg border border-legal-gold/40 bg-legal-paper/10 px-4 py-2 text-xs sm:text-sm text-legal-gold-soft font-semibold tracking-wide uppercase backdrop-blur">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 py-12 pb-28 md:py-20 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
+        <div className="space-y-6 md:space-y-7">
+          <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-lg border border-legal-gold/40 bg-legal-paper/10 px-4 py-2 text-center text-xs sm:text-sm text-legal-gold-soft font-semibold tracking-wide uppercase backdrop-blur whitespace-normal sm:whitespace-nowrap">
             <ShieldCheckIcon className="size-4" />
             Advogado para inventário extrajudicial
           </div>
 
-          <div className="space-y-5">
-            <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl leading-[1.12] font-serif font-semibold text-white">
+          <div className="space-y-4 md:space-y-5">
+            <h1 className="max-w-3xl text-[1.8rem] sm:text-4xl md:text-5xl leading-[1.08] md:leading-[1.12] font-serif font-semibold text-white">
               Inventário extrajudicial com clareza,
               <span className="block text-legal-gold-soft">
                 segurança e orientação simples
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-legal-paper max-w-2xl leading-8">
+            <p className="text-base md:text-lg text-legal-paper max-w-2xl leading-7 md:leading-8">
               Receba orientação jurídica para resolver a partilha em cartório,
               quando a família está em consenso e a documentação permite.
             </p>
@@ -67,10 +67,10 @@ export function Hero() {
           <div className="space-y-3">
             <Button
               onClick={() => redirectToWhatsapp()}
-              className="min-h-14 w-full sm:w-auto px-6 text-base font-bold rounded-lg text-white shadow-xl bg-legal-green hover:bg-legal-green-hover transition-all duration-300 hover:scale-[1.02]"
+              className="min-h-14 w-full sm:w-auto px-5 sm:px-6 text-base font-bold rounded-lg text-white shadow-xl bg-legal-green hover:bg-legal-green-hover transition-all duration-300 hover:scale-[1.02] whitespace-normal"
               aria-label="Conversar com especialista em inventário extrajudicial pelo WhatsApp"
             >
-              <MessageCircleIcon className="size-5" />
+              <WhatsAppIcon className="size-5" />
               Falar com especialista no WhatsApp
             </Button>
             <p className="text-sm text-white/70 leading-6">

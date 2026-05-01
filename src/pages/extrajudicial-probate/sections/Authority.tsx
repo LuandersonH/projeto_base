@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
 import imgAut from "@/assets/hero/hero_ze_vert.jpg";
 import imgBg from "@/assets/hero/fundo_authority.png";
-import { CheckCircle2Icon, MessageCircleIcon } from "lucide-react";
+import { CheckCircle2Icon } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 
 const commitments = [
   "Explicar cada etapa em linguagem simples",
@@ -13,7 +14,7 @@ const commitments = [
 export function Authority() {
   return (
     <section
-      className="w-full min-h-svh flex flex-col justify-center items-center px-4 py-16 bg-cover bg-left bg-no-repeat relative"
+      className="w-full min-h-svh flex flex-col justify-center items-center px-4 pt-12 pb-28 md:py-16 bg-cover bg-left bg-no-repeat relative"
       // className=" w-full min-h-svh bg-cover bg-center bg-no-repeat px-4 py-16 overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(232, 220, 198, 0.94) 0%, rgba(232, 220, 198, 0.72) 2%, rgba(38, 14, 14, 0.616)), url(${imgBg})`,
@@ -21,14 +22,14 @@ export function Authority() {
     >
       <div className="absolute inset-x-0 bottom-0 h-6 bg-linear-to-b from-transparent to-rgba(105, 0, 0, 0.616)" />
 
-      <div className="max-w-4xl space-y-4 text-center mb-8 md:mb-10">
+      <div className="max-w-4xl space-y-3 md:space-y-4 text-center mb-7 md:mb-10">
         <p className="text-sm tracking-widest uppercase text-legal-gold-soft font-semibold">
           O advogado
         </p>
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white leading-[1.18]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-white leading-[1.16] md:leading-[1.18]">
           José Arruda Jesus
         </h2>
-        <p className="text-base md:text-lg font-medium text-legal-paper/85 mx-auto leading-8">
+        <p className="text-base md:text-lg font-medium text-legal-paper/85 mx-auto leading-7 md:leading-8">
           Atuação focada em inventário extrajudicial, com condução estratégica
           para reduzir dúvidas, organizar documentos e proteger o patrimônio da
           família.
@@ -41,11 +42,11 @@ export function Authority() {
             Compromisso de atendimento
           </p>
 
-          <h3 className="mt-4 text-2xl md:text-3xl font-serif font-semibold leading-[1.2] text-legal-ink">
+          <h3 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif font-semibold leading-[1.2] text-legal-ink">
             Clareza para uma decisão sensível.
           </h3>
 
-          <div className="mt-6 space-y-4 text-base text-legal-slate leading-7">
+          <div className="mt-5 md:mt-6 space-y-3 md:space-y-4 text-[0.95rem] sm:text-base text-legal-slate leading-7">
             <p>
               Inventário envolve patrimônio, memória familiar e decisões que
               precisam ser tomadas com cuidado.
@@ -67,9 +68,9 @@ export function Authority() {
 
           <Button
             onClick={() => redirectToWhatsapp()}
-            className="mt-8 min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="mt-8 min-h-14 w-full rounded-lg text-base font-bold text-white bg-legal-green hover:bg-legal-green-hover shadow-lg transition-all duration-300 hover:scale-[1.02] whitespace-normal"
           >
-            <MessageCircleIcon className="size-5" />
+            <WhatsAppIcon className="size-5" />
             Conversar com o advogado
           </Button>
         </div>
