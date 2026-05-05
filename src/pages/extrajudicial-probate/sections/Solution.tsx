@@ -8,26 +8,30 @@ import {
 } from "lucide-react";
 import imgBg from "@/assets/hero/lampada.png";
 import imgLogo from "@/assets/hero/logo.png";
+import imgSolution1 from "@/assets/hero/solutionPoints-1.webp";
+import imgSolution2 from "@/assets/hero/solutionPoints-2.webp";
+import imgSolution3 from "@/assets/hero/solutionPoints-3.jpg";
+import imgSolution4 from "@/assets/hero/solutionPoints-4.png";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 
 const solutionPoints = [
   {
-    icon: FileTextIcon,
-    text: "Checklist documental desde o início, para evitar idas e vindas.",
+    text: "Não conseguem vender o imóvel por falta de inventário",
+    imgUrl: imgSolution1,
   },
   {
-    icon: ClockIcon,
-    text: "Roteiro mais ágil quando o caso atende aos requisitos do cartório.",
+    text: "O inventário está parado há meses (ou anos)",
+    imgUrl: imgSolution2,
   },
   {
-    icon: CalculatorIcon,
-    text: "Estimativa clara de custos, impostos e próximos passos.",
+    text: "Preocupados com os custos do processo.",
+    imgUrl: imgSolution3,
   },
   {
-    icon: UsersIcon,
-    text: "Condução técnica para manter consenso e reduzir ruídos familiares.",
+    text: "Não sabem por onde começar e tem medo de errar.",
+    imgUrl: imgSolution4,
   },
 ];
 
@@ -44,36 +48,49 @@ export function Solution() {
       <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-amber-100" />
 
       <div className="relative z-10 flex flex-col min-h-[calc(100svh-8rem)] max-w-7xl mx-auto justify-center items-center">
-        <div className="max-w-3xl text-center">
-          <p className="uppercase tracking-widest text-sm text-legal-burgundy font-semibold">
-            A solução
+        <div className="max-w-4xl text-center">
+          <p className="tracking-widest text-sm text-legal-burgundy font-semibold">
+            A solução pode ser mais simples do que parece
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-legal-ink mt-3 leading-[1.16] md:leading-[1.18]">
-            Inventário extrajudicial: um caminho mais claro quando há consenso.
+          <h2 className="uppercase text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-legal-ink mt-3 leading-[1.16] md:leading-[1.18]">
+            Inventário extrajudicial
           </h2>
           <p className="mt-4 text-base md:text-lg text-legal-slate leading-7 md:leading-8">
-            Com um advogado de inventário conduzindo a estratégia, a família
-            entende documentos, custos e prazos antes de tomar decisões.
+            <span className="font-bold">
+              Você pode organizar tudo em cartório, de forma mais rápida e sem
+              enfrentar anos na Justiça.
+            </span>
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 md:gap-5 max-w-2xl w-full mx-auto mt-10">
-          {solutionPoints.map(({ icon: Icon, text }) => (
-            <Item
-              key={text}
-              variant="muted"
-              className="bg-white/95 border border-legal-sand px-4 py-4 shadow-sm"
-            >
-              <ItemMedia variant="icon">
-                <Icon className="size-5 md:size-6 text-legal-green" />
-              </ItemMedia>
-              <ItemDescription className="text-[0.95rem] sm:text-base text-legal-charcoal leading-7 line-clamp-none">
-                {text}
-              </ItemDescription>
-            </Item>
-          ))}
+        <div className="flex flex-col gap-x-3 md:gap-x-4 max-w-4xl w-full mx-auto mt-10">
+          <p className="mx-auto text-base py-2 text-legal-burgundy font-bold text-center">
+            Muitos estão com a vida travada por não conhecerem a solução...
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-1 w-full">
+            {solutionPoints.map(({ text, imgUrl }) => (
+              <Item
+                key={text}
+                variant="muted"
+                className="relative min-h-55 overflow-hidden rounded-2xl border-0 bg-neutral-900 shadow-lg"
+                style={{
+                  backgroundImage: `url(${imgUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-black/15" />
 
-          <div className="mt-2 rounded-lg border border-legal-gold/35 bg-white/95 px-5 py-6 text-legal-charcoal shadow-xl">
+                <div className="relative z-10 flex h-full min-h-55 flex-col items-center justify-end p-5 text-center">
+                  <ItemDescription className="text-base text-center leading-6 text-white line-clamp-none overflow-visible">
+                    {text}
+                  </ItemDescription>
+                </div>
+              </Item>
+            ))}
+          </div>
+
+          <div className="my-8 rounded-lg border border-legal-gold/35 bg-white/95 px-5 py-6 text-legal-charcoal shadow-xl">
             <div className="flex flex-col sm:flex-row items-center gap-5">
               <img
                 src={imgLogo}

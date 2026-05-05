@@ -79,7 +79,7 @@ export function Urgency() {
       </div>
 
       <div className="w-full bg-legal-burgundy text-white px-4 pt-6 pb-28 md:py-6 text-center">
-        <div className="max-w-3xl mx-auto space-y-2">
+        <div className="max-w-4xl mx-auto space-y-2">
           <p className="text-base leading-7">
             Patrimônio regularizado traz segurança para a família decidir com
             tranquilidade.

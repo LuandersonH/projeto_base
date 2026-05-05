@@ -1,8 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 import { redirectToWhatsapp } from "@/constants/contact";
+import { useEffect, useState } from "react";
 
 export function StickyMobileCTA() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Se o hero NÃO está visível → mostra CTA
+        setShow(!entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // ajustável
+      },
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (!show) return null;
+
   return (
     <div
       className="fixed inset-x-0 bottom-0 z-50 md:hidden border-t border-legal-gold/20 bg-legal-ink/95 px-4 pt-3 shadow-2xl backdrop-blur min-w-0"

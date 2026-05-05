@@ -216,7 +216,7 @@ export function Contact() {
       </div>
 
       <div className="w-full bg-legal-gold text-legal-ink py-6 px-4 text-center">
-        <div className="max-w-3xl mx-auto space-y-2">
+        <div className="max-w-4xl mx-auto space-y-2">
           <p className="text-base leading-7">
             Quanto antes o cenário é organizado, mais previsível fica o
             inventário.
