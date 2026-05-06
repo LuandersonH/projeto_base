@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 import { redirectToWhatsapp } from "@/constants/contact";
-import imgLogo from "@/assets/hero/logo-extreme-horizontal-g.png";
+import imgLogo from "@/assets/logo-extreme-horizontal-g.webp";
 import { BadgeCheckIcon, CheckCircle2Icon } from "lucide-react";
 
 const heroHighlights = [

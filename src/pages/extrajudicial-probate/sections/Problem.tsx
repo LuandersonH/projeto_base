@@ -6,7 +6,7 @@ import {
   ClockIcon,
   TriangleAlertIcon,
 } from "lucide-react";
-import imgBg from "@/assets/hero/second_problem.jpg";
+import imgBg from "@/assets/second_problem.webp";
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
-import imgAut from "@/assets/hero/hero_ze_vert.jpg";
-import imgBg from "@/assets/hero/fundo_authority.png";
+import imgAut from "@/assets/hero_ze_vert.webp";
+import imgBg from "@/assets/fundo_authority.webp";
 import { CheckCircle2Icon } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
 

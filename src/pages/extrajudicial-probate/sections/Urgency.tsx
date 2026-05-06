@@ -4,7 +4,7 @@ import {
   FileWarningIcon,
   TimerIcon,
 } from "lucide-react";
-import imgBg from "@/assets/hero/fundo_authority.png";
+import imgBg from "@/assets/fundo_authority.webp";
 import { Button } from "@/components/ui/button";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";

@@ -1,17 +1,11 @@
-import { Item, ItemDescription, ItemMedia } from "@/components/ui/item";
-import {
-  CalculatorIcon,
-  CheckCircleIcon,
-  ClockIcon,
-  FileTextIcon,
-  UsersIcon,
-} from "lucide-react";
-import imgBg from "@/assets/hero/lampada.png";
-import imgLogo from "@/assets/hero/logo.png";
-import imgSolution1 from "@/assets/hero/solutionPoints-1.webp";
-import imgSolution2 from "@/assets/hero/solutionPoints-2.webp";
-import imgSolution3 from "@/assets/hero/solutionPoints-3.jpg";
-import imgSolution4 from "@/assets/hero/solutionPoints-4.png";
+import { Item, ItemDescription } from "@/components/ui/item";
+import { CheckCircleIcon } from "lucide-react";
+import imgBg from "@/assets/lampada.webp";
+import imgLogo from "@/assets/logo.webp";
+import imgSolution1 from "@/assets/solutionPoints-1.webp";
+import imgSolution2 from "@/assets/solutionPoints-2.webp";
+import imgSolution3 from "@/assets/solutionPoints-3.webp";
+import imgSolution4 from "@/assets/solutionPoints-4.webp";
 import { redirectToWhatsapp } from "@/constants/contact";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/svg/pre-made-icons";
@@ -65,7 +59,7 @@ export function Solution() {
 
         <div className="flex flex-col gap-x-3 md:gap-x-4 max-w-4xl w-full mx-auto mt-10">
           <p className="mx-auto text-base py-2 text-legal-burgundy font-bold text-center">
-            Muitos estão com a vida travada por não conhecerem a solução...
+            Muitos estão com a vida travada por não conhecerem a solução
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-1 w-full">
             {solutionPoints.map(({ text, imgUrl }) => (
